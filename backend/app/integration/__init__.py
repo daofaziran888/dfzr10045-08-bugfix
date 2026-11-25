@@ -10,8 +10,10 @@ from app.integration.contract_lifecycle import (
 )
 from app.integration.query_service_chain import (
     execute_query_chain,
+    refetch_by_receipt,
     snapshot_with_cache,
     quota_check_and_degrade,
+    arm_next_refetch_interrupt,
 )
 from app.integration.sla_freshness_chain import (
     track_freshness_and_settle_sla,
@@ -35,8 +37,10 @@ __all__ = [
     "evolve_contract_version",
     "validate_field_promises",
     "execute_query_chain",
+    "refetch_by_receipt",
     "snapshot_with_cache",
     "quota_check_and_degrade",
+    "arm_next_refetch_interrupt",
     "track_freshness_and_settle_sla",
     "escalate_breach",
     "release_dataset_with_reconcile",
